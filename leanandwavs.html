@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>LEAN &amp; WAVS &mdash; Smart Link Oficial</title>
+  <meta name="description" content="Encuentra todas las redes, música y lanzamientos de LEAN & WAVS (@leanandwavs). Spotify, Apple Music, YouTube, SoundCloud e Instagram.">
+  
+  <!-- Open Graph / Meta Tags -->
+  <meta property="og:type" content="music.song">
+  <meta property="og:title" content="LEAN &amp; WAVS (@leanandwavs)">
+  <meta property="og:description" content="Escucha a LEAN & WAVS en Spotify, Apple Music, YouTube y síguelo en sus redes oficiales.">
+  <meta property="og:image" content="assets/logo_official.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LEAN &amp; WAVS (@leanandwavs)">
+  <meta name="twitter:description" content="Escucha a LEAN & WAVS en Spotify, Apple Music, YouTube y síguelo en sus redes oficiales.">
+  <meta name="twitter:image" content="assets/logo_official.png">
+
+  <!-- Favicon / Pestaña del Navegador -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            brandMagenta: '#ff3afc',
+            brandDarkPlum: '#1d0324',
+            brandMidPlum: '#3a0841',
+            brandDeepFuchsia: '#580c62',
+            brandHoverPlum: '#8e1586',
+            brandBorderPurple: 'rgba(168, 85, 247, 0.35)',
+          },
+          animation: {
+            'pulse-glow': 'subtlePulseGlow 2.5s infinite ease-in-out',
+            'float-slow': 'floatBadge 4s ease-in-out infinite',
+            'equalizer-1': 'equalize 1.2s ease-in-out infinite alternate',
+            'equalizer-2': 'equalize 0.8s ease-in-out infinite alternate 0.2s',
+            'equalizer-3': 'equalize 1.4s ease-in-out infinite alternate 0.4s',
+            'equalizer-4': 'equalize 1.0s ease-in-out infinite alternate 0.1s',
+          },
+          keyframes: {
+            subtlePulseGlow: {
+              '0%, 100%': {
+                boxShadow: '0 0 16px rgba(255, 58, 252, 0.35)',
+                borderColor: 'rgba(255, 58, 252, 0.45)',
+              },
+              '50%': {
+                boxShadow: '0 0 28px rgba(255, 58, 252, 0.65)',
+                borderColor: 'rgba(255, 58, 252, 0.85)',
+              }
+            },
+            floatBadge: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-4px)' }
+            },
+            equalize: {
+              '0%': { height: '4px' },
+              '100%': { height: '16px' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, button, input, select, textarea {
+      font-family: 'Poppins', sans-serif !important;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      font-family: 'Poppins', sans-serif !important;
+      background-color: #000000;
+      color: #ffffff;
+      min-height: 100dvh;
+      overflow-x: hidden;
+      selection-background-color: #ff3afc;
+      selection-color: #ffffff;
+    }
+
+    ::selection {
+      background: #ff3afc;
+      color: #ffffff;
+    }
+
+    /* CUSTOM SCROLLBAR WITH MAGENTA BRANDING */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #000000;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #7e1273;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ff3afc;
+    }
+
+    /* SIGNATURE LEAN & WAVS BUTTON / CARD STYLES */
+    .canva-info-card {
+      background: linear-gradient(90deg, #1d0324 0%, #3a0841 25%, #580c62 50%, #3a0841 75%, #1d0324 100%);
+      border: 1px solid rgba(168, 85, 247, 0.35);
+      box-shadow: 0 0 16px rgba(168, 85, 247, 0.15);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .canva-info-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 58, 252, 0.2), transparent);
+      transition: left 0.6s ease;
+      pointer-events: none;
+    }
+
+    .canva-info-card:hover::before {
+      left: 100%;
+    }
+
+    .canva-info-card:hover {
+      background: #8e1586;
+      box-shadow: 0 0 32px rgba(255, 58, 252, 0.75), 0 0 12px rgba(255, 58, 252, 0.45);
+      border-color: rgba(255, 58, 252, 0.95);
+      color: #ffffff;
+      transform: translateY(-3px) scale(1.015);
+    }
+
+    .canva-info-card:active {
+      transform: translateY(-1px) scale(0.99);
+      box-shadow: 0 0 20px rgba(255, 58, 252, 0.6);
+    }
+
+    /* HIGHLIGHTED CARD (SAME SIGNATURE VELVET GRADIENT) */
+    .canva-featured-card {
+      background: linear-gradient(90deg, #1d0324 0%, #3a0841 25%, #580c62 50%, #3a0841 75%, #1d0324 100%);
+      border: 1px solid rgba(168, 85, 247, 0.35);
+      box-shadow: 0 0 16px rgba(168, 85, 247, 0.15);
+    }
+    .canva-featured-card:hover {
+      background: #8e1586;
+      box-shadow: 0 0 32px rgba(255, 58, 252, 0.75), 0 0 12px rgba(255, 58, 252, 0.45);
+      border-color: rgba(255, 58, 252, 0.95);
+    }
+
+    /* SIGNATURE PILL BUTTON */
+    .canva-pill-btn {
+      background: linear-gradient(90deg, #1d0324 0%, #3a0841 25%, #580c62 50%, #3a0841 75%, #1d0324 100%);
+      border: 1px solid rgba(168, 85, 247, 0.35);
+      box-shadow: 0 0 16px rgba(168, 85, 247, 0.15);
+      color: #ffffff;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .canva-pill-btn:hover {
+      background: #8e1586;
+      box-shadow: 0 0 30px rgba(255, 58, 252, 0.7), 0 0 10px rgba(255, 58, 252, 0.4);
+      border-color: rgba(255, 58, 252, 0.9);
+      color: #ffffff;
+      transform: translateY(-2px) scale(1.02);
+    }
+
+    /* ARTWORK CONTAINER GLOW & 3D VIBE */
+    .artwork-glow {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 2px solid rgba(255, 58, 252, 0.4);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 58, 252, 0.35);
+    }
+
+    .artwork-glow:hover {
+      transform: translateY(-4px) scale(1.02);
+      border-color: rgba(255, 58, 252, 0.9);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 45px rgba(255, 58, 252, 0.75);
+    }
+
+    /* TOAST NOTIFICATION */
+    #toast-notification {
+      transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+</head>
+<body class="relative flex flex-col items-center justify-between min-h-screen">
+
+  <div class="noise-bg"></div>
+
+  <!-- AMBIENT BACKGROUND GLOW EFFECTS -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <!-- Deep dark gradient overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/85 via-black/75 to-black/95"></div>
+
+    <!-- Radiant neon orbs -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-[#ff3afc]/15 blur-[120px]"></div>
+    <div class="absolute top-1/3 -right-32 w-96 h-96 rounded-full bg-[#8e1586]/20 blur-[130px]"></div>
+    <div class="absolute -bottom-32 left-1/4 w-96 h-96 rounded-full bg-[#580c62]/25 blur-[120px]"></div>
+  </div>
+
+  <!-- MAIN WRAPPER -->
+  <div class="relative z-10 w-full max-w-md mx-auto px-4 py-6 sm:py-8 flex flex-col items-center gap-5">
+
+    <!-- TOP BAR: LEAN & WAVS BRAND BADGE & SHARE BUTTON -->
+    <header class="w-full flex items-center justify-between gap-3 pt-1 pb-2">
+      <!-- LEAN & WAVS Brand Pill Tag -->
+      <a href="https://www.instagram.com/leanandwavs/" target="_blank" rel="noopener noreferrer" data-track="lean_wavs_tag" 
+         class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1d0324]/90 border border-[#ff3afc]/40 hover:border-[#ff3afc] hover:bg-[#3a0841] transition-all group shadow-[0_0_12px_rgba(255,58,252,0.25)]">
+        <img src="assets/logo_official.png" 
+             alt="LEAN &amp; WAVS" 
+             class="w-5 h-5 rounded-full object-contain group-hover:rotate-12 transition-transform duration-300">
+        <span class="text-[11px] font-black uppercase tracking-widest text-fuchsia-300 group-hover:text-white">
+          LEAN &amp; WAVS
+        </span>
+      </a>
+
+      <!-- Quick Share Button (Matching Aesthetic) -->
+      <button id="share-btn" data-track="share" 
+              class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1d0324]/90 border border-[#ff3afc]/40 hover:border-[#ff3afc] hover:bg-[#3a0841] text-fuchsia-300 hover:text-white text-xs font-bold tracking-wider uppercase transition-all shadow-[0_0_12px_rgba(255,58,252,0.25)] group cursor-pointer active:scale-95">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-fuchsia-300 group-hover:text-white fill-current transition-colors" viewBox="0 0 24 24">
+          <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
+        </svg>
+        <span>Compartir</span>
+      </button>
+    </header>
+
+    <!-- ARTIST HERO SECTION -->
+    <section class="w-full flex flex-col items-center text-center mt-1">
+      
+      <!-- Logo Hero: Pure Transparent PNG with Glowing Neon Velvet Halo (No White Background) -->
+      <div class="relative w-48 sm:w-56 aspect-square mb-4 group cursor-pointer flex items-center justify-center" onclick="toggleArtworkZoom()">
+        <img id="artist-cover-img"
+             src="assets/logo_official.png" 
+             alt="LEAN &amp; WAVS" 
+             class="w-full h-full object-contain filter drop-shadow-[0_0_28px_rgba(255,58,252,0.55)] transition-transform duration-500 group-hover:scale-105 group-hover:drop-shadow-[0_0_42px_rgba(255,58,252,0.85)]">
+      </div>
+
+      <!-- Artist / Label Name -->
+      <div class="space-y-1">
+        <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-white uppercase drop-shadow-[0_0_18px_rgba(255,58,252,0.45)]">
+          LEAN &amp; WAVS
+        </h1>
+      </div>
+    </section>
+
+    <!-- PRIMARY REDIRECTION BUTTONS (STREAMING & REDES) -->
+    <div class="w-full flex flex-col gap-3">
+
+      <!-- SPOTIFY ROW (DIVIDED IN TWO: ARTIST & PLAYLIST) -->
+      <div class="grid grid-cols-2 gap-2.5 sm:gap-3 w-full">
+        <!-- SPOTIFY ARTISTA / PERFIL -->
+        <a href="https://open.spotify.com/artist/0W5h1YmMarSkn45kDtouko?si=TIgN8WoJSruRC1EDwHr2UA" data-track="spotify" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="canva-info-card w-full py-3.5 px-2.5 sm:px-3.5 rounded-2xl flex items-center justify-between group">
+          <div class="flex items-center gap-1.5 sm:gap-2.5 min-w-0">
+            <div class="w-6 h-6 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-fuchsia-300 group-hover:text-white fill-current transition-all group-hover:scale-110" viewBox="0 0 24 24">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.494 17.306c-.215.353-.674.464-1.026.25-2.812-1.718-6.353-2.107-10.523-1.155-.403.092-.807-.16-.899-.562-.092-.403.16-.807.562-.899 4.568-1.044 8.49-.606 11.636 1.34.352.215.464.673.25 1.026zm1.465-3.262c-.27.44-.848.577-1.288.307-3.22-1.979-8.129-2.551-11.938-1.394-.498.151-1.027-.133-1.178-.631-.151-.498.133-1.027.631-1.178 4.357-1.322 9.775-.683 13.466 1.608.44.27.577.848.307 1.288zm.126-3.41c-3.861-2.293-10.231-2.505-13.916-1.386-.593.18-1.223-.157-1.403-.75-.18-.593.157-1.223.75-1.403 4.237-1.286 11.272-1.042 15.698 1.585.534.317.709 1.01.392 1.544-.317.534-1.01.709-1.521.41z"/>
+              </svg>
+            </div>
+            <div class="text-left min-w-0">
+              <div class="text-xs sm:text-sm font-black text-white tracking-wider uppercase group-hover:text-fuchsia-100 truncate">
+                Spotify
+              </div>
+              <div class="text-[9.5px] sm:text-[11px] font-semibold text-fuchsia-200 mt-0.5 truncate">
+                Perfil
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center text-fuchsia-300 group-hover:text-white transition-transform group-hover:translate-x-0.5 shrink-0 pl-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </div>
+        </a>
+
+        <!-- SPOTIFY PLAYLIST LEAN & WAVS -->
+        <a href="https://open.spotify.com/playlist/3AVXVqP1VrwPLCENBL9Z6O" data-track="spotify_playlist" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="canva-info-card w-full py-3.5 px-2.5 sm:px-3.5 rounded-2xl flex items-center justify-between group">
+          <div class="flex items-center gap-1.5 sm:gap-2.5 min-w-0">
+            <div class="w-6 h-6 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-fuchsia-300 group-hover:text-white fill-current transition-all group-hover:scale-110" viewBox="0 0 24 24">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.494 17.306c-.215.353-.674.464-1.026.25-2.812-1.718-6.353-2.107-10.523-1.155-.403.092-.807-.16-.899-.562-.092-.403.16-.807.562-.899 4.568-1.044 8.49-.606 11.636 1.34.352.215.464.673.25 1.026zm1.465-3.262c-.27.44-.848.577-1.288.307-3.22-1.979-8.129-2.551-11.938-1.394-.498.151-1.027-.133-1.178-.631-.151-.498.133-1.027.631-1.178 4.357-1.322 9.775-.683 13.466 1.608.44.27.577.848.307 1.288zm.126-3.41c-3.861-2.293-10.231-2.505-13.916-1.386-.593.18-1.223-.157-1.403-.75-.18-.593.157-1.223.75-1.403 4.237-1.286 11.272-1.042 15.698 1.585.534.317.709 1.01.392 1.544-.317.534-1.01.709-1.521.41z"/>
+              </svg>
+            </div>
+            <div class="text-left min-w-0">
+              <div class="text-xs sm:text-sm font-black text-white tracking-wider uppercase group-hover:text-fuchsia-100 truncate">
+                Playlist
+              </div>
+              <div class="text-[9.5px] sm:text-[11px] font-semibold text-fuchsia-200 mt-0.5 truncate">
+                L&amp;W collection
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center text-fuchsia-300 group-hover:text-white transition-transform group-hover:translate-x-0.5 shrink-0 pl-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      <!-- APPLE MUSIC -->
+      <a href="https://music.apple.com/es/artist/lean-wavs/1744507441?l=en-GB" data-track="apple_music" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         class="canva-info-card w-full py-3.5 px-4 rounded-2xl flex items-center justify-between group">
+        <div class="flex items-center gap-3.5 min-w-0">
+          <div class="w-7 h-7 flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-fuchsia-300 group-hover:text-white fill-current transition-all group-hover:scale-110" viewBox="0 0 24 24">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.84c.66-.8 1.11-1.92.99-3.04-.96.04-2.12.64-2.8 1.44-.6.69-1.13 1.83-.99 2.93 1.07.08 2.15-.55 2.8-1.33z"/>
+            </svg>
+          </div>
+          <div class="text-left min-w-0">
+            <div class="text-base font-black text-white tracking-wider uppercase group-hover:text-fuchsia-100">
+              Apple Music
+            </div>
+            <div class="text-xs font-semibold text-fuchsia-200 tracking-wide mt-0.5 truncate">
+              LEAN &amp; WAVS
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center text-fuchsia-300 group-hover:text-white transition-transform group-hover:translate-x-1 shrink-0 pl-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </div>
+      </a>
+
+      <!-- YOUTUBE -->
+      <a href="https://www.youtube.com/@leanandwavs" data-track="youtube_channel" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         class="canva-info-card w-full py-3.5 px-4 rounded-2xl flex items-center justify-between group">
+        <div class="flex items-center gap-3.5 min-w-0">
+          <div class="w-7 h-7 flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-fuchsia-300 group-hover:text-white fill-current transition-all group-hover:scale-110" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </div>
+          <div class="text-left min-w-0">
+            <div class="text-base font-black text-white tracking-wider uppercase group-hover:text-fuchsia-100">
+              YouTube
+            </div>
+            <div class="text-xs font-semibold text-fuchsia-200 tracking-wide mt-0.5 truncate">
+              @leanandwavs
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center text-fuchsia-300 group-hover:text-white transition-transform group-hover:translate-x-1 shrink-0 pl-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </div>
+      </a>
+
+      <!-- SOUNDCLOUD -->
+      <a href="https://soundcloud.com/leanandwavs" data-track="soundcloud" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         class="canva-info-card w-full py-3.5 px-4 rounded-2xl flex items-center justify-between group">
+        <div class="flex items-center gap-3.5 min-w-0">
+          <div class="w-7 h-7 flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-fuchsia-300 group-hover:text-white fill-current transition-all group-hover:scale-110" viewBox="0 0 24 24">
+              <path d="M23.999 14.165c-.052 1.796-1.612 3.169-3.4 3.169h-8.18a.68.68 0 0 1-.675-.683V7.862a.747.747 0 0 1 .452-.724s.75-.513 2.333-.513a5.364 5.364 0 0 1 2.763.755 5.433 5.433 0 0 1 2.57 3.54c.282-.08.574-.121.868-.12.884 0 1.73.358 2.347.992s.948 1.49.922 2.373ZM10.721 8.421c.247 2.98.427 5.697 0 8.672a.264.264 0 0 1-.53 0c-.395-2.946-.22-5.718 0-8.672a.264.264 0 0 1 .53 0ZM9.072 9.448c.285 2.659.37 4.986-.006 7.655a.277.277 0 0 1-.55 0c-.331-2.63-.256-5.02 0-7.655a.277.277 0 0 1 .556 0Zm-1.663-.257c.27 2.726.39 5.171 0 7.904a.266.266 0 0 1-.532 0c-.38-2.69-.257-5.21 0-7.904a.266.266 0 0 1 .532 0Zm-1.647.77a26.108 26.108 0 0 1-.008 7.147.272.272 0 0 1-.542 0 27.955 27.955 0 0 1 0-7.147.275.275 0 0 1 .55 0Zm-1.67 1.769c.421 1.865.228 3.5-.029 5.388a.257.257 0 0 1-.514 0c-.21-1.858-.398-3.549 0-5.389a.272.272 0 0 1 .543 0Zm-1.655-.273c.388 1.897.26 3.508-.01 5.412-.026.28-.514.283-.54 0-.244-1.878-.347-3.54-.01-5.412a.283.283 0 0 1 .56 0Zm-1.668.911c.4 1.268.257 2.292-.026 3.572a.257.257 0 0 1-.514 0c-.241-1.262-.354-2.312-.023-3.572a.283.283 0 0 1 .563 0Z"/>
+            </svg>
+          </div>
+          <div class="text-left min-w-0">
+            <div class="text-base font-black text-white tracking-wider uppercase group-hover:text-fuchsia-100">
+              SoundCloud
+            </div>
+            <div class="text-xs font-semibold text-fuchsia-200 tracking-wide mt-0.5 truncate">
+              LEAN &amp; WAVS
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center text-fuchsia-300 group-hover:text-white transition-transform group-hover:translate-x-1 shrink-0 pl-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </div>
+      </a>
+
+      <!-- INSTAGRAM -->
+      <a href="https://www.instagram.com/leanandwavs/" data-track="instagram" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         class="canva-info-card w-full py-3.5 px-4 rounded-2xl flex items-center justify-between group">
+        <div class="flex items-center gap-3.5 min-w-0">
+          <div class="w-7 h-7 flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-fuchsia-300 group-hover:text-white fill-current transition-all group-hover:scale-110" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+          <div class="text-left min-w-0">
+            <div class="text-base font-black text-white tracking-wider uppercase group-hover:text-fuchsia-100">
+              Instagram
+            </div>
+            <div class="text-xs font-semibold text-fuchsia-200 tracking-wide mt-0.5 truncate">
+              @leanandwavs
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center text-fuchsia-300 group-hover:text-white transition-transform group-hover:translate-x-1 shrink-0 pl-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- FEATURED VIDEO SECTION ("ÚLTIMO LANZAMIENTO") -->
+    <div class="w-full mt-3">
+      <!-- Framed Video Container in Glowing Velvet Style -->
+      <div id="video-container" 
+           class="relative w-full rounded-2xl overflow-hidden border border-[#ff3afc]/40 shadow-[0_0_25px_rgba(255,58,252,0.25)] bg-[#1d0324] transition-all hover:border-[#ff3afc] hover:shadow-[0_0_35px_rgba(255,58,252,0.45)] group">
+        
+        <!-- Video Wrapper with Responsive Embedded 16:9 YouTube Player (Vista Previa) -->
+        <div id="video-wrapper" data-track="video_play" class="relative w-full aspect-video bg-black overflow-hidden">
+          <iframe 
+            id="featured-video-iframe"
+            src="https://www.youtube-nocookie.com/embed/EHPGCmhoeyM?rel=0&enablejsapi=1" 
+            title="LEAN &amp; WAVS - Videoclip Oficial" 
+            class="absolute inset-0 w-full h-full border-0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen 
+            referrerpolicy="strict-origin-when-cross-origin">
+          </iframe>
+        </div>
+        
+        <!-- Video Footer Details -->
+        <div class="px-4 py-2.5 bg-black/60 flex items-center justify-between gap-2">
+          <span class="text-xs font-bold text-white tracking-wide truncate">
+            LEAN &amp; WAVS &mdash; Videoclip Oficial
+          </span>
+          <a href="https://www.youtube.com/watch?v=EHPGCmhoeyM" 
+             onclick="playFeaturedVideo(event)"
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="canva-pill-btn px-2.5 py-1 rounded-full border border-[#ff3afc]/40 hover:border-[#ff3afc] text-[10px] sm:text-[11px] font-bold text-fuchsia-200 hover:text-white shrink-0 uppercase flex items-center gap-1.5 transition-all shadow-[0_0_12px_rgba(255,58,252,0.25)] group/yt"
+             title="Ver en YouTube" data-track="video_youtube_link"
+             aria-label="Ver videoclip en YouTube">
+            <svg class="w-3.5 h-3.5 text-fuchsia-300 group-hover/yt:text-white fill-current transition-colors shrink-0" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            <span>YouTube</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-fuchsia-300 group-hover/yt:text-white transition-transform group-hover/yt:translate-x-0.5 group-hover/yt:-translate-y-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER WITH LEAN & WAVS AESTHETIC -->
+    <footer class="w-full pt-6 pb-4 mt-2 flex flex-col items-center text-center border-t border-white/10 gap-3">
+      <!-- Logo Solo (No Link) -->
+      <img src="assets/logo_official.png" 
+           alt="LEAN &amp; WAVS" 
+           class="w-8 h-8 object-contain">
+
+      <!-- Credits -->
+      <div class="space-y-0.5">
+        <p class="text-[11px] font-semibold text-zinc-400 tracking-wider uppercase">
+          &copy; 2026 LEAN &amp; WAVS
+        </p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-notification" 
+       class="fixed bottom-6 z-50 px-4 py-2.5 rounded-full bg-black/90 border border-[#ff3afc] shadow-[0_0_20px_rgba(255,58,252,0.8)] text-white text-xs font-bold tracking-wider flex items-center gap-2 pointer-events-none opacity-0 translate-y-4">
+    <svg class="w-4 h-4 text-[#ff3afc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span id="toast-message">¡Enlace copiado al portapapeles!</span>
+  </div>
+
+  <!-- IMAGE ZOOM MODAL (OPTIONAL INTERACTION) -->
+  <div id="zoom-modal" 
+       class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300"
+       onclick="toggleArtworkZoom()">
+    <div class="relative max-w-sm w-full rounded-2xl overflow-hidden border border-[#ff3afc] shadow-[0_0_40px_rgba(255,58,252,0.7)]"
+         onclick="event.stopPropagation()">
+      <div class="p-8 bg-black/80 flex items-center justify-center">
+        <img src="assets/logo_official.png" 
+             alt="LEAN &amp; WAVS" 
+             class="w-44 h-44 object-contain filter drop-shadow-[0_0_20px_rgba(255,58,252,0.6)]">
+      </div>
+      <div class="p-4 bg-[#1d0324] flex items-center justify-between">
+        <div>
+          <p class="text-sm font-black text-white uppercase">LEAN &amp; WAVS</p>
+          <p class="text-xs text-fuchsia-300">@leanandwavs</p>
+        </div>
+        <button onclick="toggleArtworkZoom()" class="px-3 py-1 rounded-full bg-black/60 border border-white/20 text-xs font-bold text-white hover:border-[#ff3afc]">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERACTIVITY SCRIPT -->
+  <script>
+    // Share / Copy Link Functionality (100% Reliable across file:// and https://)
+    const shareBtn = document.getElementById('share-btn');
+    const toast = document.getElementById('toast-notification');
+    const toastMsg = document.getElementById('toast-message');
+
+    function showToast(msg) {
+      if (!toast || !toastMsg) return;
+      toastMsg.textContent = msg;
+      toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 2500);
+    }
+
+    function getShareUrl() {
+      return (window.location.protocol === 'file:')
+        ? 'https://irlpages.com/p/leanandwavs/lean-wavs'
+        : window.location.href;
+    }
+
+    function copyToClipboard() {
+      const url = getShareUrl();
+
+      const fallbackCopy = (text) => {
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.position = 'fixed';
+          ta.style.left = '-9999px';
+          ta.style.top = '-9999px';
+          document.body.appendChild(ta);
+          ta.focus();
+          ta.select();
+          const successful = document.execCommand('copy');
+          document.body.removeChild(ta);
+          if (successful) {
+            showToast('¡Enlace copiado al portapapeles!');
+          } else {
+            prompt('Copia tu enlace oficial:', text);
+          }
+        } catch (e) {
+          prompt('Copia tu enlace oficial:', text);
+        }
+      };
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(url).then(() => {
+          showToast('¡Enlace copiado al portapapeles!');
+        }).catch(() => {
+          fallbackCopy(url);
+        });
+      } else {
+        fallbackCopy(url);
+      }
+    }
+
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const shareUrl = getShareUrl();
+        const shareData = {
+          title: 'LEAN & WAVS (@leanandwavs)',
+          text: 'Escucha la música de LEAN & WAVS en Spotify, Apple Music, YouTube y síguelo en sus redes:',
+          url: shareUrl
+        };
+
+        if (navigator.share && (!navigator.canShare || navigator.canShare(shareData))) {
+          try {
+            await navigator.share(shareData);
+          } catch (err) {
+            if (err.name !== 'AbortError') copyToClipboard();
+          }
+        } else {
+          copyToClipboard();
+        }
+      });
+    }
+
+    // Modal Zoom Functionality
+    function toggleArtworkZoom() {
+      const modal = document.getElementById('zoom-modal');
+      if (!modal) return;
+      const isHidden = modal.classList.contains('pointer-events-none');
+      if (isHidden) {
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.classList.add('opacity-100');
+      } else {
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        modal.classList.remove('opacity-100');
+      }
+    }
+
+    // Direct YouTube Player Handler (Mobile App / Desktop Tab)
+    function playFeaturedVideo(e) {
+      if (e) e.preventDefault();
+      const videoUrl = 'https://www.youtube.com/watch?v=EHPGCmhoeyM';
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+      if (isMobile) {
+        // Direct location navigation triggers iOS Universal Links / Android App Links to open the native YouTube app
+        window.location.href = videoUrl;
+      } else {
+        // On desktop, open in a new tab smoothly
+        window.open(videoUrl, '_blank', 'noopener,noreferrer');
+      }
+    }
+
+    // Fallback handler for local file:// testing
+    document.addEventListener('DOMContentLoaded', () => {
+      const isFileProtocol = window.location.protocol === 'file:';
+      const iframe = document.getElementById('featured-video-iframe');
+      if (isFileProtocol && iframe) {
+        const wrapper = document.getElementById('video-wrapper');
+        if (wrapper) {
+          wrapper.innerHTML = `
+            <div class="relative w-full h-full cursor-pointer bg-[#14021a] flex flex-col items-center justify-center text-center p-4 group" onclick="window.open('https://www.youtube.com/watch?v=EHPGCmhoeyM', '_blank')">
+              <img src="assets/logo_official.png" alt="Vista previa" class="absolute inset-0 w-full h-full object-cover opacity-25 filter blur-sm">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/60"></div>
+              <div class="relative z-10 flex flex-col items-center">
+                <div class="w-16 h-16 rounded-full bg-black/70 border-2 border-[#ff3afc] shadow-[0_0_30px_rgba(255,58,252,0.85)] flex items-center justify-center text-white mb-2 transition-transform duration-300 group-hover:scale-110">
+                  <svg class="w-7 h-7 text-white fill-current ml-1" viewBox="0 0 24 24">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </div>
+                <span class="text-xs font-bold text-white tracking-wider uppercase">Ver Vista Previa en YouTube</span>
+                <span class="text-[10px] text-fuchsia-300 mt-0.5">En producción (Netlify) se reproduce aquí directamente</span>
+              </div>
+            </div>
+          `;
+        }
+      }
+    });
+
+    // ==========================================
+    // LEAN & WAVS • REAL-TIME CLICK ANALYTICS
+    // ==========================================
+    const LW_ANALYTICS = {
+      pageId: 'leanandwavs',
+      supabaseUrl: 'https://bmmknbppkshgeazzifal.supabase.co',
+      getAnonKey: function() {
+        return localStorage.getItem('lw_supabase_anon_key') || 'sb_publishable_ZJob6hBCW_YCKf82AvJ57A_pc_v0Ecx';
+      },
+      track: function(eventType, platform) {
+        let refDomain = 'directo';
+        try {
+          if (document.referrer) {
+            const u = new URL(document.referrer);
+            refDomain = u.hostname.replace('www.', '');
+            if (refDomain.includes('instagram')) refDomain = 'Instagram';
+            else if (refDomain.includes('tiktok')) refDomain = 'TikTok';
+            else if (refDomain.includes('youtube')) refDomain = 'YouTube';
+            else if (refDomain.includes('spotify')) refDomain = 'Spotify';
+          }
+        } catch(e) {}
+
+        const payload = {
+          page_id: this.pageId,
+          event_type: eventType,
+          platform: platform || 'landing',
+          device: /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) ? 'mobile' : 'desktop',
+          referrer: refDomain,
+          created_at: new Date().toISOString()
+        };
+
+        // Cache locally for instant preview in dashboard
+        try {
+          const key = 'lw_analytics_' + this.pageId;
+          const events = JSON.parse(localStorage.getItem(key) || '[]');
+          events.push(payload);
+          if (events.length > 500) events.shift();
+          localStorage.setItem(key, JSON.stringify(events));
+        } catch(e) {}
+
+        // Send to Supabase
+        const anonKey = this.getAnonKey();
+        if (this.supabaseUrl && anonKey) {
+          const endpoint = this.supabaseUrl + '/rest/v1/analytics_events';
+          const body = JSON.stringify(payload);
+          try {
+            fetch(endpoint, {
+              method: 'POST',
+              headers: {
+                'apikey': anonKey,
+                'Authorization': 'Bearer ' + anonKey,
+                'Content-Type': 'application/json',
+                'Prefer': 'return=minimal'
+              },
+              body: body,
+              keepalive: true
+            }).catch(function() {});
+          } catch(e) {}
+        }
+      }
+    };
+
+    // Auto-track page view
+    LW_ANALYTICS.track('view', 'landing');
+
+    // Auto-track all clicks with data-track attribute
+    document.addEventListener('click', function(e) {
+      const el = e.target.closest('[data-track]');
+      if (el) {
+        const trackTag = el.getAttribute('data-track');
+        if (trackTag) {
+          LW_ANALYTICS.track('click', trackTag);
+        }
+      }
+    });
+
+  </script>
+</body>
+</html>

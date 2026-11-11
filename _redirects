@@ -1,0 +1,8 @@
+/admin         /admin.html         200
+/dashboard     /admin.html         200
+/stats         /admin.html         200
+/sello         /leanandwavs.html   200
+/lean-wavs     /leanandwavs.html   200
+/leanandwavs   /leanandwavs.html   200
+/lw            /leanandwavs.html   200
+/*             /index.html         200
