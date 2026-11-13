@@ -481,7 +481,7 @@
       // If viewed locally via file://, share the live profile URL
       return (window.location.protocol === 'file:')
         ? 'https://irlpages.com/p/yasu/yasu'
-        : window.location.href;
+        : (window.location.origin + window.location.pathname);
     }
 
     function copyToClipboard() {

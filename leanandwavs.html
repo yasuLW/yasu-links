@@ -528,7 +528,7 @@
     function getShareUrl() {
       return (window.location.protocol === 'file:')
         ? 'https://irlpages.com/p/leanandwavs/lean-wavs'
-        : window.location.href;
+        : (window.location.origin + window.location.pathname);
     }
 
     function copyToClipboard() {
