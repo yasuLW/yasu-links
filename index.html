@@ -38,11 +38,11 @@
             sans: ['Poppins', 'sans-serif'],
           },
           colors: {
-            brandMagenta: '#ff3afc',
-            brandDarkPlum: '#1d0324',
-            brandMidPlum: '#3a0841',
-            brandDeepFuchsia: '#580c62',
-            brandHoverPlum: '#8e1586',
+            brandMagenta: '#f4b8c4',
+            brandDarkPlum: '#161a1e',
+            brandMidPlum: '#4a0a12',
+            brandDeepFuchsia: '#7a0912',
+            brandHoverPlum: '#b80c18',
             brandBorderPurple: 'rgba(168, 85, 247, 0.35)',
           },
           animation: {
@@ -56,12 +56,12 @@
           keyframes: {
             subtlePulseGlow: {
               '0%, 100%': {
-                boxShadow: '0 0 16px rgba(255, 58, 252, 0.35)',
-                borderColor: 'rgba(255, 58, 252, 0.45)',
+                boxShadow: '0 0 16px rgba(224, 26, 40, 0.35)',
+                borderColor: 'rgba(224, 26, 40, 0.45)',
               },
               '50%': {
-                boxShadow: '0 0 28px rgba(255, 58, 252, 0.65)',
-                borderColor: 'rgba(255, 58, 252, 0.85)',
+                boxShadow: '0 0 28px rgba(224, 26, 40, 0.65)',
+                borderColor: 'rgba(224, 26, 40, 0.85)',
               },
             },
             floatBadge: {
@@ -89,39 +89,76 @@
 
     html, body {
       font-family: 'Poppins', sans-serif !important;
-      background-color: #000000;
-      color: #ffffff;
+      background: radial-gradient(circle at 50% 18%, #2e343b 0%, #1b2026 48%, #0f1215 100%);
+      background-color: #131619;
+      color: #f9eef0;
       min-height: 100dvh;
       overflow-x: hidden;
-      selection-background-color: #ff3afc;
+      selection-background-color: #c81020;
       selection-color: #ffffff;
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23b80c18' stroke='%23f4b8c4' stroke-width='1.5' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E") 12 12, auto;
+    }
+
+    a, button, [role="button"], .canva-info-card, .canva-pill-btn {
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 24 24'%3E%3Cpath fill='%23e01a28' stroke='%23ffd6df' stroke-width='1.6' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E") 13 13, pointer !important;
+    }
+
+    /* 35MM FILM GRAIN + ELEVATOR METALLIC SHEEN */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.06;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* FLOATING AZATURE VELVET HEARTS */
+    .azature-hearts-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .azature-heart {
+      position: absolute;
+      color: #b80c18;
+      filter: drop-shadow(0 0 12px rgba(224, 26, 40, 0.55)) blur(0.4px);
+      opacity: 0.28;
+      animation: floatHeart 14s ease-in-out infinite;
+    }
+    @keyframes floatHeart {
+      0%, 100% { transform: translateY(0) rotate(-6deg) scale(1); }
+      50% { transform: translateY(-18px) rotate(6deg) scale(1.06); }
     }
 
     ::selection {
-      background: #ff3afc;
+      background: #c81020;
       color: #ffffff;
     }
 
-    /* CUSTOM SCROLLBAR WITH MAGENTA BRANDING */
+    /* CUSTOM SCROLLBAR WITH AZATURE CRIMSON & BLUSH */
     ::-webkit-scrollbar {
       width: 6px;
     }
     ::-webkit-scrollbar-track {
-      background: #000000;
+      background: #131619;
     }
     ::-webkit-scrollbar-thumb {
-      background: #7e1273;
+      background: #8a0710;
       border-radius: 9999px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #ff3afc;
+      background: #e01a28;
     }
 
-    /* SIGNATURE LEAN & WAVS BUTTON / CARD STYLES */
+    /* AZATURE CARD & BUTTON STYLES (SLATE + BLUSH PINK + CRIMSON) */
     .canva-info-card {
-      background: linear-gradient(90deg, #1d0324 0%, #3a0841 25%, #580c62 50%, #3a0841 75%, #1d0324 100%);
-      border: 1px solid rgba(168, 85, 247, 0.35);
-      box-shadow: 0 0 16px rgba(168, 85, 247, 0.15);
+      background: linear-gradient(90deg, rgba(22, 26, 30, 0.92) 0%, rgba(56, 16, 24, 0.92) 50%, rgba(22, 26, 30, 0.92) 100%);
+      border: 1px solid rgba(244, 184, 196, 0.32);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45), 0 0 16px rgba(184, 12, 24, 0.18);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       cursor: pointer;
       position: relative;
@@ -135,7 +172,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 58, 252, 0.2), transparent);
+      background: linear-gradient(90deg, transparent, rgba(244, 184, 196, 0.22), transparent);
       transition: left 0.6s ease;
       pointer-events: none;
     }
@@ -145,43 +182,43 @@
     }
 
     .canva-info-card:hover {
-      background: #8e1586;
-      box-shadow: 0 0 32px rgba(255, 58, 252, 0.75), 0 0 12px rgba(255, 58, 252, 0.45);
-      border-color: rgba(255, 58, 252, 0.95);
+      background: linear-gradient(90deg, #7a0912 0%, #b80c18 50%, #7a0912 100%);
+      box-shadow: 0 0 28px rgba(224, 26, 40, 0.65), 0 0 12px rgba(244, 184, 196, 0.4);
+      border-color: rgba(244, 184, 196, 0.9);
       color: #ffffff;
       transform: translateY(-3px) scale(1.015);
     }
 
     .canva-info-card:active {
       transform: translateY(-1px) scale(0.99);
-      box-shadow: 0 0 20px rgba(255, 58, 252, 0.6);
+      box-shadow: 0 0 20px rgba(224, 26, 40, 0.55);
     }
 
-    /* HIGHLIGHTED CARD (SAME SIGNATURE VELVET GRADIENT) */
+    /* HIGHLIGHTED CARD */
     .canva-featured-card {
-      background: linear-gradient(90deg, #1d0324 0%, #3a0841 25%, #580c62 50%, #3a0841 75%, #1d0324 100%);
-      border: 1px solid rgba(168, 85, 247, 0.35);
-      box-shadow: 0 0 16px rgba(168, 85, 247, 0.15);
+      background: linear-gradient(90deg, rgba(22, 26, 30, 0.94) 0%, rgba(68, 16, 26, 0.94) 50%, rgba(22, 26, 30, 0.94) 100%);
+      border: 1px solid rgba(244, 184, 196, 0.42);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45), 0 0 18px rgba(184, 12, 24, 0.22);
     }
     .canva-featured-card:hover {
-      background: #8e1586;
-      box-shadow: 0 0 32px rgba(255, 58, 252, 0.75), 0 0 12px rgba(255, 58, 252, 0.45);
-      border-color: rgba(255, 58, 252, 0.95);
+      background: linear-gradient(90deg, #7a0912 0%, #b80c18 50%, #7a0912 100%);
+      box-shadow: 0 0 28px rgba(224, 26, 40, 0.65), 0 0 12px rgba(244, 184, 196, 0.4);
+      border-color: rgba(244, 184, 196, 0.9);
     }
 
     /* SIGNATURE PILL BUTTON */
     .canva-pill-btn {
-      background: linear-gradient(90deg, #1d0324 0%, #3a0841 25%, #580c62 50%, #3a0841 75%, #1d0324 100%);
-      border: 1px solid rgba(168, 85, 247, 0.35);
-      box-shadow: 0 0 16px rgba(168, 85, 247, 0.15);
-      color: #ffffff;
+      background: linear-gradient(90deg, rgba(22, 26, 30, 0.92) 0%, rgba(56, 16, 24, 0.92) 50%, rgba(22, 26, 30, 0.92) 100%);
+      border: 1px solid rgba(244, 184, 196, 0.35);
+      box-shadow: 0 0 16px rgba(184, 12, 24, 0.2);
+      color: #f9eef0;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .canva-pill-btn:hover {
-      background: #8e1586;
-      box-shadow: 0 0 30px rgba(255, 58, 252, 0.7), 0 0 10px rgba(255, 58, 252, 0.4);
-      border-color: rgba(255, 58, 252, 0.9);
+      background: #b80c18;
+      box-shadow: 0 0 26px rgba(224, 26, 40, 0.65), 0 0 10px rgba(244, 184, 196, 0.4);
+      border-color: rgba(244, 184, 196, 0.9);
       color: #ffffff;
       transform: translateY(-2px) scale(1.02);
     }
@@ -189,14 +226,14 @@
     /* ARTWORK CONTAINER GLOW & 3D VIBE */
     .artwork-glow {
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      border: 2px solid rgba(255, 58, 252, 0.4);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 58, 252, 0.35);
+      border: 2px solid rgba(244, 184, 196, 0.45);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(184, 12, 24, 0.4);
     }
 
     .artwork-glow:hover {
       transform: translateY(-4px) scale(1.02);
-      border-color: rgba(255, 58, 252, 0.9);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 45px rgba(255, 58, 252, 0.75);
+      border-color: rgba(244, 184, 196, 0.95);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 42px rgba(224, 26, 40, 0.65);
     }
 
     /* TOAST NOTIFICATION */
@@ -206,6 +243,14 @@
   </style>
 </head>
 <body class="relative flex flex-col items-center justify-between min-h-screen">
+  <!-- AZATURE FLOATING VELVET HEARTS -->
+  <div class="azature-hearts-bg" aria-hidden="true">
+    <svg class="azature-heart" style="top: 8%; left: 7%; width: 42px; animation-delay: 0s;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <svg class="azature-heart" style="top: 20%; right: 9%; width: 58px; animation-delay: -3s; opacity: 0.22;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <svg class="azature-heart" style="top: 52%; left: 5%; width: 34px; animation-delay: -6s; opacity: 0.24;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <svg class="azature-heart" style="top: 68%; right: 7%; width: 48px; animation-delay: -9s; opacity: 0.2;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <svg class="azature-heart" style="bottom: 10%; left: 14%; width: 28px; animation-delay: -11s; opacity: 0.26;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+  </div>
 
   <div class="noise-bg"></div>
 
@@ -215,9 +260,9 @@
     <div class="absolute inset-0 bg-gradient-to-b from-black/85 via-black/75 to-black/95"></div>
 
     <!-- Radiant neon orbs -->
-    <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-[#ff3afc]/15 blur-[120px]"></div>
-    <div class="absolute top-1/3 -right-32 w-96 h-96 rounded-full bg-[#8e1586]/20 blur-[130px]"></div>
-    <div class="absolute -bottom-32 left-1/4 w-96 h-96 rounded-full bg-[#580c62]/25 blur-[120px]"></div>
+    <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-[#f4b8c4]/15 blur-[120px]"></div>
+    <div class="absolute top-1/3 -right-32 w-96 h-96 rounded-full bg-[#b80c18]/20 blur-[130px]"></div>
+    <div class="absolute -bottom-32 left-1/4 w-96 h-96 rounded-full bg-[#7a0912]/25 blur-[120px]"></div>
   </div>
 
   <!-- MAIN WRAPPER -->
@@ -227,19 +272,19 @@
     <header class="w-full flex items-center justify-between gap-3 pt-1 pb-2">
       <!-- YASU Instagram Pill Tag -->
       <a href="https://www.instagram.com/yasu.lw/" data-track="instagram" target="_blank" rel="noopener noreferrer" 
-         class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1d0324]/90 border border-[#ff3afc]/40 hover:border-[#ff3afc] hover:bg-[#3a0841] transition-all group shadow-[0_0_12px_rgba(255,58,252,0.25)]">
-        <svg class="w-4 h-4 text-fuchsia-300 group-hover:text-white fill-current transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24">
+         class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#161a1e]/90 border border-[#f4b8c4]/40 hover:border-[#f4b8c4] hover:bg-[#4a0a12] transition-all group shadow-[0_0_12px_rgba(224,26,40,0.25)]">
+        <svg class="w-4 h-4 text-rose-200 group-hover:text-white fill-current transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24">
           <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
         </svg>
-        <span class="text-[11px] font-black tracking-wider text-fuchsia-300 group-hover:text-white">
+        <span class="text-[11px] font-black tracking-wider text-rose-200 group-hover:text-white">
           @yasu.lw
         </span>
       </a>
 
       <!-- Quick Share Button (Matching Aesthetic) -->
       <button id="share-btn" data-track="share" 
-              class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1d0324]/90 border border-[#ff3afc]/40 hover:border-[#ff3afc] hover:bg-[#3a0841] text-fuchsia-300 hover:text-white text-xs font-bold tracking-wider uppercase transition-all shadow-[0_0_12px_rgba(255,58,252,0.25)] group cursor-pointer active:scale-95">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-fuchsia-300 group-hover:text-white fill-current transition-colors" viewBox="0 0 24 24">
+              class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#161a1e]/90 border border-[#f4b8c4]/40 hover:border-[#f4b8c4] hover:bg-[#4a0a12] text-rose-200 hover:text-white text-xs font-bold tracking-wider uppercase transition-all shadow-[0_0_12px_rgba(224,26,40,0.25)] group cursor-pointer active:scale-95">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 text-rose-200 group-hover:text-white fill-current transition-colors" viewBox="0 0 24 24">
           <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
         </svg>
         <span>Compartir</span>
@@ -265,7 +310,7 @@
 
       <!-- Artist Name & Handle -->
       <div class="space-y-1">
-        <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-white uppercase drop-shadow-[0_0_18px_rgba(255,58,252,0.45)]">
+        <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-white uppercase drop-shadow-[0_0_18px_rgba(224,26,40,0.45)]">
           YASU
         </h1>
 
@@ -283,20 +328,20 @@
          class="canva-info-card w-full py-3.5 px-4 rounded-2xl flex items-center justify-between group">
         <div class="flex items-center gap-3.5 min-w-0">
           <div class="w-7 h-7 flex items-center justify-center shrink-0">
-            <svg class="w-6 h-6 text-fuchsia-300 group-hover:text-white fill-current transition-all group-hover:scale-110" viewBox="0 0 24 24">
+            <svg class="w-6 h-6 text-rose-200 group-hover:text-white fill-current transition-all group-hover:scale-110" viewBox="0 0 24 24">
               <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.494 17.306c-.215.353-.674.464-1.026.25-2.812-1.718-6.353-2.107-10.523-1.155-.403.092-.807-.16-.899-.562-.092-.403.16-.807.562-.899 4.568-1.044 8.49-.606 11.636 1.34.352.215.464.673.25 1.026zm1.465-3.262c-.27.44-.848.577-1.288.307-3.22-1.979-8.129-2.551-11.938-1.394-.498.151-1.027-.133-1.178-.631-.151-.498.133-1.027.631-1.178 4.357-1.322 9.775-.683 13.466 1.608.44.27.577.848.307 1.288zm.126-3.41c-3.861-2.293-10.231-2.505-13.916-1.386-.593.18-1.223-.157-1.403-.75-.18-.593.157-1.223.75-1.403 4.237-1.286 11.272-1.042 15.698 1.585.534.317.709 1.01.392 1.544-.317.534-1.01.709-1.521.41z"/>
             </svg>
           </div>
           <div class="text-left min-w-0">
-            <div class="text-base font-black text-white tracking-wider uppercase group-hover:text-fuchsia-100">
+            <div class="text-base font-black text-white tracking-wider uppercase group-hover:text-rose-50">
               Spotify
             </div>
-            <div class="text-xs font-semibold text-fuchsia-200 tracking-wide mt-0.5 truncate">
+            <div class="text-xs font-semibold text-rose-100 tracking-wide mt-0.5 truncate">
               YASU
             </div>
           </div>
         </div>
-        <div class="flex items-center text-fuchsia-300 group-hover:text-white transition-transform group-hover:translate-x-1 shrink-0 pl-2">
+        <div class="flex items-center text-rose-200 group-hover:text-white transition-transform group-hover:translate-x-1 shrink-0 pl-2">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="7" y1="17" x2="17" y2="7"></line>
             <polyline points="7 7 17 7 17 17"></polyline>
@@ -311,20 +356,20 @@
          class="canva-info-card w-full py-3.5 px-4 rounded-2xl flex items-center justify-between group">
         <div class="flex items-center gap-3.5 min-w-0">
           <div class="w-7 h-7 flex items-center justify-center shrink-0">
-            <svg class="w-6 h-6 text-fuchsia-300 group-hover:text-white fill-current transition-all group-hover:scale-110" viewBox="0 0 24 24">
+            <svg class="w-6 h-6 text-rose-200 group-hover:text-white fill-current transition-all group-hover:scale-110" viewBox="0 0 24 24">
               <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.84c.66-.8 1.11-1.92.99-3.04-.96.04-2.12.64-2.8 1.44-.6.69-1.13 1.83-.99 2.93 1.07.08 2.15-.55 2.8-1.33z"/>
             </svg>
           </div>
           <div class="text-left min-w-0">
-            <div class="text-base font-black text-white tracking-wider uppercase group-hover:text-fuchsia-100">
+            <div class="text-base font-black text-white tracking-wider uppercase group-hover:text-rose-50">
               Apple Music
             </div>
-            <div class="text-xs font-semibold text-fuchsia-200 tracking-wide mt-0.5 truncate">
+            <div class="text-xs font-semibold text-rose-100 tracking-wide mt-0.5 truncate">
               YASU
             </div>
           </div>
         </div>
-        <div class="flex items-center text-fuchsia-300 group-hover:text-white transition-transform group-hover:translate-x-1 shrink-0 pl-2">
+        <div class="flex items-center text-rose-200 group-hover:text-white transition-transform group-hover:translate-x-1 shrink-0 pl-2">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="7" y1="17" x2="17" y2="7"></line>
             <polyline points="7 7 17 7 17 17"></polyline>
@@ -339,20 +384,20 @@
          class="canva-info-card w-full py-3.5 px-4 rounded-2xl flex items-center justify-between group">
         <div class="flex items-center gap-3.5 min-w-0">
           <div class="w-7 h-7 flex items-center justify-center shrink-0">
-            <svg class="w-6 h-6 text-fuchsia-300 group-hover:text-white fill-current transition-all group-hover:scale-110" viewBox="0 0 24 24">
+            <svg class="w-6 h-6 text-rose-200 group-hover:text-white fill-current transition-all group-hover:scale-110" viewBox="0 0 24 24">
               <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
             </svg>
           </div>
           <div class="text-left min-w-0">
-            <div class="text-base font-black text-white tracking-wider uppercase group-hover:text-fuchsia-100">
+            <div class="text-base font-black text-white tracking-wider uppercase group-hover:text-rose-50">
               YouTube
             </div>
-            <div class="text-xs font-semibold text-fuchsia-200 tracking-wide mt-0.5 truncate">
+            <div class="text-xs font-semibold text-rose-100 tracking-wide mt-0.5 truncate">
               @yasuLW
             </div>
           </div>
         </div>
-        <div class="flex items-center text-fuchsia-300 group-hover:text-white transition-transform group-hover:translate-x-1 shrink-0 pl-2">
+        <div class="flex items-center text-rose-200 group-hover:text-white transition-transform group-hover:translate-x-1 shrink-0 pl-2">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="7" y1="17" x2="17" y2="7"></line>
             <polyline points="7 7 17 7 17 17"></polyline>
@@ -367,20 +412,20 @@
          class="canva-info-card w-full py-3.5 px-4 rounded-2xl flex items-center justify-between group">
         <div class="flex items-center gap-3.5 min-w-0">
           <div class="w-7 h-7 flex items-center justify-center shrink-0">
-            <svg class="w-6 h-6 text-fuchsia-300 group-hover:text-white fill-current transition-all group-hover:scale-110" viewBox="0 0 24 24">
+            <svg class="w-6 h-6 text-rose-200 group-hover:text-white fill-current transition-all group-hover:scale-110" viewBox="0 0 24 24">
               <path d="M23.999 14.165c-.052 1.796-1.612 3.169-3.4 3.169h-8.18a.68.68 0 0 1-.675-.683V7.862a.747.747 0 0 1 .452-.724s.75-.513 2.333-.513a5.364 5.364 0 0 1 2.763.755 5.433 5.433 0 0 1 2.57 3.54c.282-.08.574-.121.868-.12.884 0 1.73.358 2.347.992s.948 1.49.922 2.373ZM10.721 8.421c.247 2.98.427 5.697 0 8.672a.264.264 0 0 1-.53 0c-.395-2.946-.22-5.718 0-8.672a.264.264 0 0 1 .53 0ZM9.072 9.448c.285 2.659.37 4.986-.006 7.655a.277.277 0 0 1-.55 0c-.331-2.63-.256-5.02 0-7.655a.277.277 0 0 1 .556 0Zm-1.663-.257c.27 2.726.39 5.171 0 7.904a.266.266 0 0 1-.532 0c-.38-2.69-.257-5.21 0-7.904a.266.266 0 0 1 .532 0Zm-1.647.77a26.108 26.108 0 0 1-.008 7.147.272.272 0 0 1-.542 0 27.955 27.955 0 0 1 0-7.147.275.275 0 0 1 .55 0Zm-1.67 1.769c.421 1.865.228 3.5-.029 5.388a.257.257 0 0 1-.514 0c-.21-1.858-.398-3.549 0-5.389a.272.272 0 0 1 .543 0Zm-1.655-.273c.388 1.897.26 3.508-.01 5.412-.026.28-.514.283-.54 0-.244-1.878-.347-3.54-.01-5.412a.283.283 0 0 1 .56 0Zm-1.668.911c.4 1.268.257 2.292-.026 3.572a.257.257 0 0 1-.514 0c-.241-1.262-.354-2.312-.023-3.572a.283.283 0 0 1 .563 0Z"/>
             </svg>
           </div>
           <div class="text-left min-w-0">
-            <div class="text-base font-black text-white tracking-wider uppercase group-hover:text-fuchsia-100">
+            <div class="text-base font-black text-white tracking-wider uppercase group-hover:text-rose-50">
               SoundCloud
             </div>
-            <div class="text-xs font-semibold text-fuchsia-200 tracking-wide mt-0.5 truncate">
+            <div class="text-xs font-semibold text-rose-100 tracking-wide mt-0.5 truncate">
               hdehoe
             </div>
           </div>
         </div>
-        <div class="flex items-center text-fuchsia-300 group-hover:text-white transition-transform group-hover:translate-x-1 shrink-0 pl-2">
+        <div class="flex items-center text-rose-200 group-hover:text-white transition-transform group-hover:translate-x-1 shrink-0 pl-2">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="7" y1="17" x2="17" y2="7"></line>
             <polyline points="7 7 17 7 17 17"></polyline>
@@ -394,7 +439,7 @@
     <div class="w-full mt-3">
       <!-- Framed Video Container in Glowing Velvet Style -->
       <div id="video-container" 
-           class="relative w-full rounded-2xl overflow-hidden border border-[#ff3afc]/40 shadow-[0_0_25px_rgba(255,58,252,0.25)] bg-[#1d0324] transition-all hover:border-[#ff3afc] hover:shadow-[0_0_35px_rgba(255,58,252,0.45)] group">
+           class="relative w-full rounded-2xl overflow-hidden border border-[#f4b8c4]/40 shadow-[0_0_25px_rgba(224,26,40,0.25)] bg-[#161a1e] transition-all hover:border-[#f4b8c4] hover:shadow-[0_0_35px_rgba(224,26,40,0.45)] group">
         
         <!-- Video Wrapper with Responsive Embedded 16:9 YouTube Player (Vista Previa) -->
         <div id="video-wrapper" data-track="video_play" class="relative w-full aspect-video bg-black overflow-hidden">
@@ -421,7 +466,7 @@
       <!-- Credits -->
       <div class="space-y-0.5">
         <p class="text-[11px] font-semibold text-zinc-400 tracking-wider uppercase">
-          &copy; 2026 LEAN &amp; WAVS
+          <span class="inline-flex items-center gap-0.5 align-middle -translate-y-[0.5px]"><span class="inline-flex items-center justify-center w-[9px] h-[9px] rounded-full border border-current text-[6px] font-bold leading-none">C</span><span class="inline-flex items-center justify-center w-[9px] h-[9px] rounded-full border border-current text-[6px] font-bold leading-none">R</span></span> 2026 LEAN &amp; WAVS
         </p>
       </div>
     </footer>
@@ -430,8 +475,8 @@
 
   <!-- TOAST NOTIFICATION CONTAINER -->
   <div id="toast-notification" 
-       class="fixed bottom-6 z-50 px-4 py-2.5 rounded-full bg-black/90 border border-[#ff3afc] shadow-[0_0_20px_rgba(255,58,252,0.8)] text-white text-xs font-bold tracking-wider flex items-center gap-2 pointer-events-none opacity-0 translate-y-4">
-    <svg class="w-4 h-4 text-[#ff3afc]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+       class="fixed bottom-6 z-50 px-4 py-2.5 rounded-full bg-black/90 border border-[#f4b8c4] shadow-[0_0_20px_rgba(224,26,40,0.8)] text-white text-xs font-bold tracking-wider flex items-center gap-2 pointer-events-none opacity-0 translate-y-4">
+    <svg class="w-4 h-4 text-[#f4b8c4]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="20 6 9 17 4 12"></polyline>
     </svg>
     <span id="toast-message">¡Enlace copiado al portapapeles!</span>
@@ -441,18 +486,18 @@
   <div id="zoom-modal" 
        class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300"
        onclick="toggleArtworkZoom()">
-    <div class="relative max-w-sm w-full rounded-2xl overflow-hidden border border-[#ff3afc] shadow-[0_0_40px_rgba(255,58,252,0.7)]"
+    <div class="relative max-w-sm w-full rounded-2xl overflow-hidden border border-[#f4b8c4] shadow-[0_0_40px_rgba(224,26,40,0.7)]"
          onclick="event.stopPropagation()">
       <img src="assets/cover.jpg?v=2" 
            alt="YASU" 
            class="w-full h-auto object-cover"
            onerror="this.onerror=null; this.src='assets/cover.jpg'">
-      <div class="p-4 bg-[#1d0324] flex items-center justify-between">
+      <div class="p-4 bg-[#161a1e] flex items-center justify-between">
         <div>
           <p class="text-sm font-black text-white uppercase">YASU</p>
-          <p class="text-xs text-fuchsia-300">@yasu.lw</p>
+          <p class="text-xs text-rose-200">@yasu.lw</p>
         </div>
-        <button onclick="toggleArtworkZoom()" class="px-3 py-1 rounded-full bg-black/60 border border-white/20 text-xs font-bold text-white hover:border-[#ff3afc]">
+        <button onclick="toggleArtworkZoom()" class="px-3 py-1 rounded-full bg-black/60 border border-white/20 text-xs font-bold text-white hover:border-[#f4b8c4]">
           Cerrar
         </button>
       </div>
@@ -592,13 +637,13 @@
               <img src="assets/cover.jpg?v=2" alt="Vista previa" class="absolute inset-0 w-full h-full object-cover opacity-35 filter blur-sm">
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/60"></div>
               <div class="relative z-10 flex flex-col items-center">
-                <div class="w-16 h-16 rounded-full bg-black/70 border-2 border-[#ff3afc] shadow-[0_0_30px_rgba(255,58,252,0.85)] flex items-center justify-center text-white mb-2 transition-transform duration-300 group-hover:scale-110">
+                <div class="w-16 h-16 rounded-full bg-black/70 border-2 border-[#f4b8c4] shadow-[0_0_30px_rgba(224,26,40,0.85)] flex items-center justify-center text-white mb-2 transition-transform duration-300 group-hover:scale-110">
                   <svg class="w-7 h-7 text-white fill-current ml-1" viewBox="0 0 24 24">
                     <polygon points="5 3 19 12 5 21 5 3"></polygon>
                   </svg>
                 </div>
                 <span class="text-xs font-bold text-white tracking-wider uppercase">Ver Vista Previa en YouTube</span>
-                <span class="text-[10px] text-fuchsia-300 mt-0.5">En producción (Netlify) se reproduce aquí directamente</span>
+                <span class="text-[10px] text-rose-200 mt-0.5">En producción (Netlify) se reproduce aquí directamente</span>
               </div>
             </div>
           `;
